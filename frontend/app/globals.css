@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Select + Option dark-theme override
+   Browser <option> elements do NOT inherit Tailwind classes from
+   parent <select>, so we force dark-theme styling here.
+   ============================================================ */
+select,
+select option,
+select optgroup {
+  background-color: #131a2e !important;
+  color: #e6e9f5 !important;
+}
+
+select option:hover {
+  background-color: #1f2a44 !important;
+  color: #ffffff !important;
+}
+
+select option:checked,
+select option[selected] {
+  background-color: #6366f1 !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Disabled option */
+select option:disabled {
+  color: #6b7396 !important;
+  background-color: #10172a !important;
+}
+
+/* Make sure form labels are visible (was text-ink-soft, too dim) */
+label {
+  color: #c8cee0;
+}
+
+html, body, #__next { height: 100%; }
+html { color-scheme: dark; }
+body {
+  background: linear-gradient(180deg, #0b1020 0%, #0a0f1d 100%);
+  color: #e6e9f5;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC",
+               "Microsoft YaHei", "Helvetica Neue", sans-serif;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #1f2a44; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #2a3960; }
+
+/* Markdown */
+.md h1, .md h2, .md h3 { font-weight: 600; margin: .8em 0 .4em; }
+.md h1 { font-size: 1.6rem; }
+.md h2 { font-size: 1.3rem; }
+.md h3 { font-size: 1.1rem; }
+.md p { margin: .4em 0; line-height: 1.65; }
+.md ul, .md ol { margin: .4em 0 .6em 1.4em; }
+.md li { margin: .2em 0; }
+.md code:not(pre code) {
+  background: #1f2a44; padding: .12em .35em; border-radius: 4px; font-size: .9em;
+}
+.md pre {
+  margin: .6em 0; border-radius: 10px; overflow: hidden;
+  border: 1px solid #1f2a44;
+}
+.md blockquote {
+  border-left: 3px solid #6366f1; padding-left: .8em; color: #a4abc7; margin: .6em 0;
+}
+.md table { border-collapse: collapse; margin: .6em 0; }
+.md th, .md td { border: 1px solid #1f2a44; padding: .3em .6em; }
